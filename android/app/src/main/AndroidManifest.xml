@@ -1,7 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ai_assistant">
-   <application
-        android:label="ai_assistant"
+    <uses-permission android:name="android.permission.INTERNET"/>   <!-- Internet Permission -->
+    <application
+        android:label="AI Assistant"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

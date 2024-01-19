@@ -2,6 +2,8 @@ import "package:ai_assistant/helper/global.dart";
 import "package:ai_assistant/screens/home_screen.dart";
 import "package:flutter/material.dart";
 
+import "../widgets/custom_loading.dart";
+
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
@@ -28,19 +30,30 @@ class _SplashScreenState extends State<SplashScreen> {
 
     return Scaffold(
       // Body
-      body: Center(
-          child: Card(
-        color: Colors.blue,
-        shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(20))),
-        child: Padding(
-          padding: EdgeInsets.all(mediaQuery.width * .05),
-          child: Image.asset(
-            "assets/images/logo.png",
-            width: mediaQuery.width * .4,
-          ),
+      body: SizedBox(
+        width: double.maxFinite,
+        child: Column(
+          children: [
+            const Spacer(
+              flex: 2,
+            ),
+            Card(
+              shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(20))),
+              child: Padding(
+                padding: EdgeInsets.all(mediaQuery.width * .05),
+                child: Image.asset(
+                  "assets/images/logo.png",
+                  width: mediaQuery.width * .4,
+                ),
+              ),
+            ),
+            const Spacer(), // Add space
+            const CustomLoading(),
+            const Spacer() // Add space
+          ],
         ),
-      )),
+      ),
     );
   }
 }
